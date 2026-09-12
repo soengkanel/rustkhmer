@@ -30,7 +30,7 @@ fn main() {
                 break;
             }
             _ => {
-                println!("Invalid choice! Please select a number from 1 to 4.");
+                println!("Invalid choice! Please select a number from 1 to 3.");
                 continue; 
             }
         }
