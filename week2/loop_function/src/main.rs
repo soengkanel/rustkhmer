@@ -11,7 +11,7 @@ pub fn calculate_sum(limit: i32) -> i32 {
         if number % 2 == 0 {
             sum += number; // Add the even number to sum
         } else {
-            sum += number; // Add the odd number to sum. 
+            sum -= number; // Add the odd number to sum. 
         }
     }
     // Return the result
@@ -19,7 +19,7 @@ pub fn calculate_sum(limit: i32) -> i32 {
 }
 
 fn main() {
-    let result = calculate_sum(8); // Call the calculate_sum() function and give it the value 8 as the limit.
+    let result = calculate_sum(7); // Call the calculate_sum() function and give it the value 8 as the limit.
 
     println!("Total: {}", result);
 }
