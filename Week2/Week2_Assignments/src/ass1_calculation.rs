@@ -24,7 +24,7 @@ fn type_of_number()->i32{
     io::stdout().flush().unwrap();
     let mut choice_input = String::new();
     io::stdin().read_line(&mut choice_input).expect("Failed to read input.");
-    //let choice: i32 = 
+   
     choice_input.trim().parse().expect("Invalid input! Please input the correct above number.")
 }
 
@@ -81,8 +81,6 @@ fn sum_all_numbers(start: i32, end: i32) -> i32 {
 fn subtract_even_numbers(start: i32, end: i32) -> i32 {
     if start <= end {
         let actual_start = if start % 2 == 0 { start } else { start + 1 };
-        if actual_start > end { return 0; }
-
         let mut total_difference = actual_start;
         for number in (actual_start + 1)..=end {
             if number % 2 == 0 {
@@ -92,8 +90,6 @@ fn subtract_even_numbers(start: i32, end: i32) -> i32 {
         total_difference
     } else {
         let actual_start = if start % 2 == 0 { start } else { start - 1 };
-        if actual_start < end { return 0; }
-
         let mut total_difference = actual_start;
         for number in (end..actual_start).rev() {
             if number % 2 == 0 {
@@ -107,8 +103,6 @@ fn subtract_even_numbers(start: i32, end: i32) -> i32 {
 fn subtract_odd_numbers(start: i32, end: i32) -> i32 {
     if start <= end {
         let actual_start = if start % 2 != 0 { start } else { start + 1 };
-        if actual_start > end { return 0; }
-
         let mut total_difference = actual_start;
         for number in (actual_start + 1)..=end {
             if number % 2 != 0 {
@@ -118,8 +112,6 @@ fn subtract_odd_numbers(start: i32, end: i32) -> i32 {
         total_difference
     } else {
         let actual_start = if start % 2 != 0 { start } else { start - 1 };
-        if actual_start < end { return 0; }
-
         let mut total_difference = actual_start;
         for number in (end..actual_start).rev() {
             if number % 2 != 0 {
@@ -197,7 +189,6 @@ fn multiply_all_numbers(start: i32, end: i32) -> i32 {
 fn divide_even_numbers(start: i32, end: i32) -> f64 {
     if start <= end {
         let actual_start = if start % 2 == 0 { start } else { start + 1 };
-        if actual_start > end { return 0.0; }
         
         if actual_start == 0 && actual_start == end {
             return f64::NAN;
@@ -212,7 +203,6 @@ fn divide_even_numbers(start: i32, end: i32) -> f64 {
         total_quotient
     } else {
         let actual_start = if start % 2 == 0 { start } else { start - 1 };
-        if actual_start < end { return 0.0; }
         
         if actual_start == 0 && actual_start == end {
             return f64::NAN;
@@ -231,7 +221,6 @@ fn divide_even_numbers(start: i32, end: i32) -> f64 {
 fn divide_odd_numbers(start: i32, end: i32) -> f64 {
     if start <= end {
         let actual_start= if start % 2 != 0 { start } else { start + 1 };
-        if actual_start > end { return 0.0; }
 
         let mut total_quotient = actual_start as f64;
         for number in (actual_start + 1)..=end {
@@ -242,7 +231,6 @@ fn divide_odd_numbers(start: i32, end: i32) -> f64 {
         total_quotient
     } else {
         let actual_start = if start % 2 != 0 { start } else { start - 1 };
-        if actual_start < end { return 0.0; }
 
         let mut total_quotient = actual_start as f64;
         for number in (end..actual_start).rev() {
@@ -282,7 +270,7 @@ fn type_of_operation(){
     println!("2. Substract");
     println!("3. Multiply");
     println!("4. Divide");
-    println!("Exist");
+    println!("Exit");
     print!("Please enter your choice (1-4): ");
     io::stdout().flush().unwrap();
     let mut operation_choice_input = String::new();
